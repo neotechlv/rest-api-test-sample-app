@@ -1,0 +1,10 @@
+server:
+  port: 14002
+
+spring:
+    profiles:
+        active: local
+    application:
+        name: schoolkid-service
+    pid:
+        file: ${spring.application.name}.pid

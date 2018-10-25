@@ -1,0 +1,15 @@
+plugins {
+    id 'net.ltgt.apt' version '0.8'
+}
+
+dependencies {
+    apt 'org.mapstruct:mapstruct-processor:1.2.0.Final'
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+    compile("org.mapstruct:mapstruct-jdk8:1.2.0.Final")
+}
+
+compileJava {
+    options.compilerArgs = [
+            '-Amapstruct.unmappedTargetPolicy=IGNORE'
+    ]
+}

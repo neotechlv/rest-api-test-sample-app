@@ -1,0 +1,29 @@
+spring:
+  jackson:
+    default-property-inclusion: non_null
+    deserialization:
+      ADJUST_DATES_TO_CONTEXT_TIME_ZONE: false
+      READ_DATE_TIMESTAMPS_AS_NANOSECONDS: false
+    serialization:
+      WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS: false
+  data:
+    mongodb:
+      host: localhost
+      port: 27018
+      authentication-database: admin
+      username: root
+      password: password
+
+logging:
+  config: classpath:logback-console.xml
+
+management:
+  endpoints:
+    web:
+      expose: ["health", "info", "env", "configprops"]
+  endpoint:
+    health:
+      show-details: always
+
+swagger:
+    enabled: true

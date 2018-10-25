@@ -1,0 +1,5 @@
+rootProject.name = 'rest-api-test-sample-app'
+
+include 'book-service'
+include 'order-service'
+include 'schoolkid-service'

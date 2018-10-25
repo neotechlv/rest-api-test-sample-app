@@ -1,0 +1,28 @@
+spring:
+  jackson:
+    default-property-inclusion: non_null
+    deserialization:
+      ADJUST_DATES_TO_CONTEXT_TIME_ZONE: false
+      READ_DATE_TIMESTAMPS_AS_NANOSECONDS: false
+    serialization:
+      WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS: false
+
+logging:
+  config: classpath:logback-console.xml
+
+integrations:
+  eklase:
+    host: localhost
+    port: 8100
+    search-uri: "http://${integrations.eklase.host}:${integrations.eklase.port}/api/search"
+
+management:
+  endpoints:
+    web:
+      expose: ["health", "info", "env", "configprops"]
+  endpoint:
+    health:
+      show-details: always
+
+swagger:
+    enabled: true
